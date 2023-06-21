@@ -1,8 +1,6 @@
-# @sxzz/eslint-config [![npm](https://img.shields.io/npm/v/@sxzz/eslint-config.svg)](https://npmjs.com/package/@sxzz/eslint-config)
+# @alwynou/eslint-config [![npm](https://img.shields.io/npm/v/@alwynou/eslint-config.svg)](https://npmjs.com/package/@alwynou/eslint-config)
 
 Flat ESLint config for JavaScript, TypeScript, Vue 2, Vue 3, Prettier.
-
-[Legacy Version](https://github.com/sxzz/eslint-config-legacy)
 
 ## Features
 
@@ -13,14 +11,14 @@ Flat ESLint config for JavaScript, TypeScript, Vue 2, Vue 3, Prettier.
 ## Install
 
 ```bash
-npm i -D @sxzz/eslint-config
+npm i -D @alwynou/eslint-config
 ```
 
 ## Usage
 
 ```js
 // eslint.config.js
-import { all } from '@sxzz/eslint-config'
+import { all } from '@alwynou/eslint-config'
 
 export default defineFlatConfig(all)
 ```
@@ -28,8 +26,8 @@ export default defineFlatConfig(all)
 ### Custom Config
 
 ```js
-import { sxzz } from '@sxzz/eslint-config'
-export default sxzz(
+import { alwynou } from '@alwynou/eslint-config'
+export default alwynou(
   [
     /* your custom config */
   ],
@@ -37,14 +35,6 @@ export default sxzz(
 )
 ```
 
-## Sponsors
-
-<p align="center">
-  <a href="https://cdn.jsdelivr.net/gh/sxzz/sponsors/sponsors.svg">
-    <img src='https://cdn.jsdelivr.net/gh/sxzz/sponsors/sponsors.svg'/>
-  </a>
-</p>
-
 ## License
 
-[MIT](./LICENSE) License © 2021-PRESENT [三咲智子](https://github.com/sxzz)
+[MIT](./LICENSE) License © 2021-PRESENT [Alwyn Ou](https://github.com/alwynou)

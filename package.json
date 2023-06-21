@@ -1,17 +1,17 @@
 {
-  "name": "@sxzz/eslint-config",
+  "name": "@alwynou/eslint-config",
   "version": "3.0.0",
   "packageManager": "pnpm@8.6.2",
-  "description": "ESLint config for @sxzz.",
+  "description": "ESLint config for @alwynou.",
   "type": "module",
   "license": "MIT",
-  "homepage": "https://github.com/sxzz/eslint-config#readme",
+  "homepage": "https://github.com/alwynou/eslint-config#readme",
   "bugs": {
-    "url": "https://github.com/sxzz/eslint-config/issues"
+    "url": "https://github.com/alwynou/eslint-config/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sxzz/eslint-config.git"
+    "url": "git+https://github.com/alwynou/eslint-config.git"
   },
   "files": [
     "index.js",

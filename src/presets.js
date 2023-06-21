@@ -37,7 +37,7 @@ export const all = [...vue, ...basic, ...prettier]
  * prettier: boolean
  * markdown: boolean
  * }>) => FlatESLintConfigItem[]} */
-export function sxzz(
+export function alwynou(
   config = [],
   {
     vue: enableVue = true,
