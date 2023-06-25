@@ -19,6 +19,9 @@ export const js = [
       },
       sourceType: 'module',
     },
+    plugins: {
+      antfu: antfuPlugin,
+    },
     rules: {
       'no-unused-vars': ['error', { args: 'none', ignoreRestSiblings: true }],
       'no-constant-condition': 'warn',
@@ -83,6 +86,8 @@ export const js = [
       ],
       'no-lonely-if': 'error',
       'prefer-exponentiation-operator': 'error',
+
+      'antfu/top-level-function': 'error',
     },
   },
   {
@@ -147,6 +152,7 @@ export const imports = [
         },
       ],
       'import/no-default-export': 'error',
+      'import/newline-after-import': ['error', { count: 1 }],
 
       'antfu/import-dedupe': 'error',
       'antfu/prefer-inline-type-import': 'error',
@@ -193,10 +199,15 @@ export const unicorn = [
       'unicorn/no-instanceof-array': 'error',
       'unicorn/no-invalid-remove-event-listener': 'error',
       'unicorn/no-lonely-if': 'error',
+      'unicorn/no-nested-ternary': 'warn',
       'unicorn/no-new-array': 'error',
       'unicorn/no-new-buffer': 'error',
       'unicorn/no-unnecessary-await': 'error',
+      'unicorn/no-unreadable-array-destructuring': 'warn',
+      'unicorn/no-unreadable-iife': 'warn',
       'unicorn/no-unsafe-regex': 'off',
+      'unicorn/no-useless-promise-resolve-reject': 'error',
+      'unicorn/no-useless-switch-case': 'error',
       'unicorn/number-literal-case': 'error',
       'unicorn/prefer-add-event-listener': 'error',
       'unicorn/prefer-array-find': 'error',

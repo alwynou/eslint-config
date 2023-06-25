@@ -1,5 +1,6 @@
 import tsParser from '@typescript-eslint/parser'
 import tsPlugin from '@typescript-eslint/eslint-plugin'
+import antfuPlugin from 'eslint-plugin-antfu'
 import { GLOB_TS, GLOB_TSX } from './shared.js'
 
 export { tsParser, tsPlugin }
@@ -16,6 +17,7 @@ export const typescript = [
     },
     plugins: {
       '@typescript-eslint': tsPlugin,
+      antfu: antfuPlugin,
     },
     rules: {
       ...tsPlugin.configs['eslint-recommended'].overrides[0].rules,
@@ -34,6 +36,9 @@ export const typescript = [
       '@typescript-eslint/no-explicit-any': 'off',
       '@typescript-eslint/no-non-null-assertion': 'off',
       '@typescript-eslint/prefer-as-const': 'warn',
+
+      'antfu/generic-spacing': 'warn',
+      'antfu/no-ts-export-equal': 'warn',
     },
   },
   {
