@@ -2,7 +2,7 @@
 
 import { eslintComments } from './eslint-comments.js'
 import { imports, js, jsx, unicorn } from './js.js'
-import { jsonc, pkgOrder } from './jsonc.js'
+import { jsonc, packageOrder } from './jsonc.js'
 import { markdown } from './markdown.js'
 import { prettier } from './prettier.js'
 import { GLOB_EXCLUDE } from './shared.js'
@@ -24,7 +24,7 @@ export const basic = [
   ...imports,
   ...unicorn,
   ...jsonc,
-  ...pkgOrder,
+  ...packageOrder,
   ...yml,
   ...eslintComments,
 ]

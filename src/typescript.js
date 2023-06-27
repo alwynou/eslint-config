@@ -23,14 +23,14 @@ export const typescript = [
       ...tsPlugin.configs['eslint-recommended'].overrides[0].rules,
       ...tsPlugin.configs['recommended'].rules,
 
-      '@typescript-eslint/no-unused-vars': 'error',
+      '@typescript-eslint/no-unused-vars': 'off', // apply js rule
       '@typescript-eslint/no-redeclare': 'error',
 
       '@typescript-eslint/ban-ts-comment': 'off',
       '@typescript-eslint/ban-types': 'off',
       '@typescript-eslint/consistent-type-imports': [
         'error',
-        { fixStyle: 'inline-type-imports', disallowTypeAnnotations: false },
+        { fixStyle: 'separate-type-imports', disallowTypeAnnotations: false },
       ],
       '@typescript-eslint/explicit-module-boundary-types': 'off',
       '@typescript-eslint/no-explicit-any': 'off',

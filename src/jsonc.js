@@ -21,7 +21,7 @@ export const jsonc = [
 ]
 
 /** @type {import('eslint-define-config').FlatESLintConfigItem[]} */
-export const pkgOrder = [
+export const packageOrder = [
   {
     files: ['**/package.json'],
     rules: {
