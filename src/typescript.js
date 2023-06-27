@@ -23,7 +23,15 @@ export const typescript = [
       ...tsPlugin.configs['eslint-recommended'].overrides[0].rules,
       ...tsPlugin.configs['recommended'].rules,
 
-      '@typescript-eslint/no-unused-vars': 'off', // apply js rule
+      '@typescript-eslint/no-unused-vars': [
+        'warn',
+        {
+          vars: 'all',
+          varsIgnorePattern: '^_',
+          args: 'all',
+          argsIgnorePattern: '^_',
+        },
+      ],
       '@typescript-eslint/no-redeclare': 'error',
 
       '@typescript-eslint/ban-ts-comment': 'off',
