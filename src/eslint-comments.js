@@ -4,14 +4,11 @@ import commentsPlugin from 'eslint-plugin-eslint-comments'
 export const eslintComments = [
   {
     plugins: {
-      'eslint-comments': commentsPlugin,
+      'eslint-comments': commentsPlugin
     },
     rules: {
       ...commentsPlugin.configs.recommended.rules,
-      'eslint-comments/disable-enable-pair': [
-        'error',
-        { allowWholeFile: true },
-      ],
-    },
-  },
+      'eslint-comments/disable-enable-pair': ['error', { allowWholeFile: true }]
+    }
+  }
 ]

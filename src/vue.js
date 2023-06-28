@@ -12,9 +12,9 @@ export function getVueVersion() {
   if (
     pkg &&
     typeof pkg.version === 'string' &&
-    !Number.isNaN(+pkg.version[0])
+    !Number.isNaN(Number(pkg.version[0]))
   ) {
-    return +pkg.version[0]
+    return Number(pkg.version[0])
   }
   return 3
 }
@@ -31,16 +31,16 @@ export const reactivityTransform = [
         $computed: 'readonly',
         $shallowRef: 'readonly',
         $toRef: 'readonly',
-        $customRef: 'readonly',
-      },
+        $customRef: 'readonly'
+      }
     },
     plugins: {
-      vue: vuePlugin,
+      vue: vuePlugin
     },
     rules: {
-      'vue/no-setup-props-destructure': 'off',
-    },
-  },
+      'vue/no-setup-props-destructure': 'off'
+    }
+  }
 ]
 
 /** @type {import('eslint-define-config').Rules} */
@@ -57,15 +57,15 @@ const vueCustomRules = {
       html: {
         void: 'always',
         normal: 'always',
-        component: 'always',
+        component: 'always'
       },
       svg: 'always',
-      math: 'always',
-    },
+      math: 'always'
+    }
   ],
   'vue/component-tags-order': [
     'error',
-    { order: ['script', 'template', 'style'] },
+    { order: ['script', 'template', 'style'] }
   ],
   'vue/custom-event-name-casing': ['error', 'camelCase'],
   'vue/no-useless-v-bind': 'error',
@@ -80,11 +80,11 @@ const vueCustomRules = {
     'always',
     {
       ignoreConstructors: false,
-      avoidQuotes: true,
-    },
+      avoidQuotes: true
+    }
   ],
   'vue/no-loss-of-precision': 'error',
-  'vue/no-empty-pattern': 'error',
+  'vue/no-empty-pattern': 'error'
 }
 
 /** @type {import('eslint-define-config').Rules} */
@@ -92,7 +92,7 @@ const vue3Rules = {
   ...vuePlugin.configs['base'].rules,
   ...vuePlugin.configs['vue3-essential'].rules,
   ...vuePlugin.configs['vue3-strongly-recommended'].rules,
-  ...vuePlugin.configs['vue3-recommended'].rules,
+  ...vuePlugin.configs['vue3-recommended'].rules
 }
 
 /** @type {import('eslint-define-config').Rules} */
@@ -100,7 +100,7 @@ const vue2Rules = {
   ...vuePlugin.configs['base'].rules,
   ...vuePlugin.configs['essential'].rules,
   ...vuePlugin.configs['strongly-recommended'].rules,
-  ...vuePlugin.configs['recommended'].rules,
+  ...vuePlugin.configs['recommended'].rules
 }
 
 /** @type {import('eslint-define-config').FlatESLintConfigItem[]} */
@@ -109,7 +109,7 @@ export const vue = [
     files: [GLOB_VUE],
     plugins: {
       vue: vuePlugin,
-      '@typescript-eslint': tsPlugin,
+      '@typescript-eslint': tsPlugin
     },
     languageOptions: {
       parser: vueParser,
@@ -118,23 +118,23 @@ export const vue = [
         sourceType: 'module',
         extraFileExtensions: ['.vue'],
         ecmaFeatures: {
-          jsx: true,
-        },
-      },
+          jsx: true
+        }
+      }
     },
     processor: vuePlugin.processors['.vue'],
     rules: {
-      ...typescript[0].rules,
-    },
+      ...typescript[0].rules
+    }
   },
   {
     plugins: {
-      vue: vuePlugin,
+      vue: vuePlugin
     },
     rules: {
       ...(isVue3 ? vue3Rules : vue2Rules),
-      ...vueCustomRules,
-    },
+      ...vueCustomRules
+    }
   },
-  ...reactivityTransform,
+  ...reactivityTransform
 ]

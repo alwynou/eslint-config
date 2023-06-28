@@ -7,15 +7,15 @@ export const yml = [
   {
     files: [GLOB_YAML],
     plugins: {
-      yml: ymlPlugin,
+      yml: ymlPlugin
     },
     languageOptions: {
-      parser: ymlParser,
+      parser: ymlParser
     },
     rules: {
       ...configs.standard.rules,
       ...configs.prettier.rules,
-      'yml/no-empty-mapping-value': 'off',
-    },
-  },
+      'yml/no-empty-mapping-value': 'off'
+    }
+  }
 ]

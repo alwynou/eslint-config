@@ -28,7 +28,7 @@
   "scripts": {
     "build": "unbuild",
     "lint": "eslint .",
-    "lint:fix": "pnpm run lint --fix",
+    "lint:fix": "eslint . --fix",
     "release": "bumpp && pnpm run build && pnpm publish"
   },
   "peerDependencies": {

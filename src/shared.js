@@ -31,7 +31,7 @@ export const GLOB_ALL_SRC = /** @type {const} */ ([
   GLOB_MARKDOWN,
   GLOB_VUE,
   GLOB_YAML,
-  GLOB_HTML,
+  GLOB_HTML
 ])
 
 export const GLOB_NODE_MODULES = /** @type {const} */ ('**/node_modules')
@@ -39,7 +39,7 @@ export const GLOB_DIST = /** @type {const} */ ('**/dist')
 export const GLOB_LOCKFILE = /** @type {const} */ ([
   '**/package-lock.json',
   '**/yarn.lock',
-  '**/pnpm-lock.yaml',
+  '**/pnpm-lock.yaml'
 ])
 export const GLOB_EXCLUDE = /** @type {const} */ ([
   GLOB_NODE_MODULES,
@@ -63,5 +63,5 @@ export const GLOB_EXCLUDE = /** @type {const} */ ([
   '**/LICENSE*',
   '**/__snapshots__',
   '**/auto-import?(s).d.ts',
-  '**/components.d.ts',
+  '**/components.d.ts'
 ])

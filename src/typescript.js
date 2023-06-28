@@ -12,12 +12,12 @@ export const typescript = [
     languageOptions: {
       parser: tsParser,
       parserOptions: {
-        sourceType: 'module',
-      },
+        sourceType: 'module'
+      }
     },
     plugins: {
       '@typescript-eslint': tsPlugin,
-      antfu: antfuPlugin,
+      antfu: antfuPlugin
     },
     rules: {
       ...tsPlugin.configs['eslint-recommended'].overrides[0].rules,
@@ -29,8 +29,8 @@ export const typescript = [
           vars: 'all',
           varsIgnorePattern: '^_',
           args: 'all',
-          argsIgnorePattern: '^_',
-        },
+          argsIgnorePattern: '^_'
+        }
       ],
       '@typescript-eslint/no-redeclare': 'error',
 
@@ -38,7 +38,7 @@ export const typescript = [
       '@typescript-eslint/ban-types': 'off',
       '@typescript-eslint/consistent-type-imports': [
         'error',
-        { fixStyle: 'separate-type-imports', disallowTypeAnnotations: false },
+        { fixStyle: 'separate-type-imports', disallowTypeAnnotations: false }
       ],
       '@typescript-eslint/explicit-module-boundary-types': 'off',
       '@typescript-eslint/no-explicit-any': 'off',
@@ -46,25 +46,25 @@ export const typescript = [
       '@typescript-eslint/prefer-as-const': 'warn',
 
       'antfu/generic-spacing': 'warn',
-      'antfu/no-ts-export-equal': 'warn',
-    },
+      'antfu/no-ts-export-equal': 'warn'
+    }
   },
   {
     files: ['**/*.d.ts'],
     rules: {
-      'import/no-duplicates': 'off',
-    },
+      'import/no-duplicates': 'off'
+    }
   },
   {
     files: ['**/*.{test,spec}.ts?(x)'],
     rules: {
-      'no-unused-expressions': 'off',
-    },
+      'no-unused-expressions': 'off'
+    }
   },
   {
     files: ['**/*.js', '**/*.cjs'],
     rules: {
-      '@typescript-eslint/no-var-requires': 'off',
-    },
-  },
+      '@typescript-eslint/no-var-requires': 'off'
+    }
+  }
 ]

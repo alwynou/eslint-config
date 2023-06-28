@@ -15,22 +15,36 @@ export const js = [
       globals: {
         ...globals.browser,
         ...globals.es2021,
-        ...globals.node,
+        ...globals.node
       },
-      sourceType: 'module',
+      sourceType: 'module'
     },
     plugins: {
-      antfu: antfuPlugin,
+      antfu: antfuPlugin
     },
+
     rules: {
+      quotes: ['warn', 'single'],
+      semi: ['warn', 'never'],
+      'comma-dangle': [
+        'warn',
+        {
+          arrays: 'never',
+          objects: 'never',
+          imports: 'never',
+          exports: 'never',
+          functions: 'never'
+        }
+      ],
+
       'no-unused-vars': [
         'warn',
         {
           vars: 'all',
           varsIgnorePattern: '^_',
           args: 'all',
-          argsIgnorePattern: '^_',
-        },
+          argsIgnorePattern: '^_'
+        }
       ],
       'no-constant-condition': 'warn',
       'no-debugger': 'warn',
@@ -39,7 +53,7 @@ export const js = [
         'error',
         'ForInStatement',
         'LabeledStatement',
-        'WithStatement',
+        'WithStatement'
       ],
       'no-return-await': 'warn',
       'no-empty': ['error', { allowEmptyCatch: true }],
@@ -50,23 +64,23 @@ export const js = [
           ignoreDeclarationSort: true,
           ignoreMemberSort: false,
           memberSyntaxSortOrder: ['none', 'all', 'multiple', 'single'],
-          allowSeparatedGroups: false,
-        },
+          allowSeparatedGroups: false
+        }
       ],
 
       'no-var': 'error',
       'prefer-const': [
         'warn',
-        { destructuring: 'all', ignoreReadBeforeAssign: true },
+        { destructuring: 'all', ignoreReadBeforeAssign: true }
       ],
       'prefer-arrow-callback': [
         'error',
-        { allowNamedFunctions: false, allowUnboundThis: true },
+        { allowNamedFunctions: false, allowUnboundThis: true }
       ],
       'object-shorthand': [
         'error',
         'always',
-        { ignoreConstructors: false, avoidQuotes: true },
+        { ignoreConstructors: false, avoidQuotes: true }
       ],
       'prefer-rest-params': 'error',
       'prefer-spread': 'error',
@@ -90,27 +104,27 @@ export const js = [
         {
           allowShortCircuit: true,
           allowTernary: true,
-          allowTaggedTemplates: true,
-        },
+          allowTaggedTemplates: true
+        }
       ],
       'no-lonely-if': 'error',
       'prefer-exponentiation-operator': 'error',
 
-      'antfu/top-level-function': 'error',
-    },
+      'antfu/top-level-function': 'error'
+    }
   },
   {
     files: ['**/scripts/*', '**/cli.*'],
     rules: {
-      'no-console': 'off',
-    },
+      'no-console': 'off'
+    }
   },
   {
     files: ['**/*.{test,spec}.js?(x)'],
     rules: {
-      'no-unused-expressions': 'off',
-    },
-  },
+      'no-unused-expressions': 'off'
+    }
+  }
 ]
 
 /** @type {import('eslint-define-config').FlatESLintConfigItem[]} */
@@ -120,11 +134,11 @@ export const jsx = [
     languageOptions: {
       parserOptions: {
         ecmaFeatures: {
-          jsx: true,
-        },
-      },
-    },
-  },
+          jsx: true
+        }
+      }
+    }
+  }
 ]
 
 /** @type {import('eslint-define-config').FlatESLintConfigItem[]} */
@@ -132,12 +146,12 @@ export const imports = [
   {
     plugins: {
       import: importPlugin,
-      antfu: antfuPlugin,
+      antfu: antfuPlugin
     },
     settings: {
       'import/resolver': {
-        node: { extensions: ['.js', '.mjs', '.ts', '.mts', '.d.ts'] },
-      },
+        node: { extensions: ['.js', '.mjs', '.ts', '.mts', '.d.ts'] }
+      }
     },
     rules: {
       'import/first': 'error',
@@ -154,45 +168,45 @@ export const imports = [
             'sibling',
             'index',
             'object',
-            'type',
+            'type'
           ],
           pathGroups: [{ pattern: '@/**', group: 'internal' }],
-          pathGroupsExcludedImportTypes: ['type'],
-        },
+          pathGroupsExcludedImportTypes: ['type']
+        }
       ],
       'import/no-default-export': 'error',
       'import/newline-after-import': [
         'error',
-        { count: 1, considerComments: true },
+        { count: 1, considerComments: true }
       ],
 
       'antfu/import-dedupe': 'error',
-      'antfu/prefer-inline-type-import': 'error',
-    },
+      'antfu/prefer-inline-type-import': 'error'
+    }
   },
   {
     files: [
       `**/*config*.${GLOB_SRC_EXT}`,
       `**/views/${GLOB_SRC}`,
       `**/pages/${GLOB_SRC}`,
-      `**/{index,vite,esbuild,rollup,webpack,rspack}.ts`,
+      '**/{index,vite,esbuild,rollup,webpack,rspack}.ts',
       '**/*.d.ts',
-      `${GLOB_MARKDOWN}/**`,
+      `${GLOB_MARKDOWN}/**`
     ],
     plugins: {
-      import: importPlugin,
+      import: importPlugin
     },
     rules: {
-      'import/no-default-export': 'off',
-    },
-  },
+      'import/no-default-export': 'off'
+    }
+  }
 ]
 
 /** @type {import('eslint-define-config').FlatESLintConfigItem[]} */
 export const unicorn = [
   {
     plugins: {
-      unicorn: unicornPlugin,
+      unicorn: unicornPlugin
     },
     rules: {
       'unicorn/better-regex': 'error',
@@ -303,7 +317,7 @@ export const unicorn = [
       'unicorn/switch-case-braces': 'error',
       'unicorn/template-indent': 'error',
       'unicorn/text-encoding-identifier-case': 'error',
-      'unicorn/throw-new-error': 'error',
-    },
-  },
+      'unicorn/throw-new-error': 'error'
+    }
+  }
 ]

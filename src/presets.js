@@ -26,7 +26,7 @@ export const basic = [
   ...jsonc,
   ...packageOrder,
   ...yml,
-  ...eslintComments,
+  ...eslintComments
 ]
 
 /** @type { FlatESLintConfigItem[] } */
@@ -42,7 +42,7 @@ export function alwynou(
   {
     vue: enableVue = true,
     prettier: enablePrettier = true,
-    markdown: enableMarkdown = true,
+    markdown: enableMarkdown = true
   } = {}
 ) {
   const configs = []

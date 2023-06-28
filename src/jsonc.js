@@ -7,17 +7,17 @@ export const jsonc = [
   {
     files: [GLOB_JSON, GLOB_JSON5, GLOB_JSONC],
     plugins: {
-      jsonc: jsoncPlugin,
+      jsonc: jsoncPlugin
     },
     languageOptions: {
-      parser: jsoncParser,
+      parser: jsoncParser
     },
     rules: {
       ...configs['recommended-with-jsonc'].rules,
       'jsonc/quote-props': 'off',
-      'jsonc/quotes': 'off',
-    },
-  },
+      'jsonc/quotes': 'off'
+    }
+  }
 ]
 
 /** @type {import('eslint-define-config').FlatESLintConfigItem[]} */
@@ -69,14 +69,14 @@ export const packageOrder = [
             'pnpm',
             'husky',
             'lint-staged',
-            'eslintConfig',
-          ],
+            'eslintConfig'
+          ]
         },
         {
           pathPattern: '^(?:dev|peer|optional|bundled)?[Dd]ependencies$',
-          order: { type: 'asc' },
-        },
-      ],
-    },
-  },
+          order: { type: 'asc' }
+        }
+      ]
+    }
+  }
 ]

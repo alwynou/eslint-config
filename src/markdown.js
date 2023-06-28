@@ -7,21 +7,21 @@ export const markdown = [
   {
     files: [GLOB_MARKDOWN],
     plugins: {
-      markdown: markdownPlugin,
+      markdown: markdownPlugin
     },
-    processor: 'markdown/markdown',
+    processor: 'markdown/markdown'
   },
   {
     files: [`${GLOB_MARKDOWN}/${GLOB_SRC}`, `${GLOB_MARKDOWN}/${GLOB_VUE}`],
     languageOptions: {
       parserOptions: {
         ecmaFeatures: {
-          impliedStrict: true,
-        },
-      },
+          impliedStrict: true
+        }
+      }
     },
     plugins: {
-      '@typescript-eslint': tsPlugin,
+      '@typescript-eslint': tsPlugin
     },
     rules: {
       ...markdownPlugin.configs.recommended.overrides[1].rules,
@@ -35,7 +35,7 @@ export const markdown = [
       'no-restricted-imports': 'off',
       'no-undef': 'off',
       'no-unused-expressions': 'off',
-      'no-unused-vars': 'off',
-    },
-  },
+      'no-unused-vars': 'off'
+    }
+  }
 ]
