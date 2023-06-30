@@ -16,6 +16,8 @@ npm i -D @alwynou/eslint-config
 
 ## Usage
 
+> In VScode should add config: `eslint.experimental.useFlatConfig: true` current.
+
 ```js
 // eslint.config.js
 import { all } from '@alwynou/eslint-config'
