@@ -29,6 +29,7 @@
     "build": "unbuild",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
+    "release": "bumpp",
     "publish:npm": "pnpm publish --access public --no-git-checks"
   },
   "peerDependencies": {
