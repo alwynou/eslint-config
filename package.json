@@ -29,7 +29,7 @@
     "build": "unbuild",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "release": "pnpm run build && bumpp && pnpm publish"
+    "publish:npm": "pnpm publish --access public --no-git-checks"
   },
   "peerDependencies": {
     "eslint": "^8.0.0"
