@@ -21,7 +21,7 @@ export const typescript = [
     },
     rules: {
       ...tsPlugin.configs['eslint-recommended'].overrides[0].rules,
-      ...tsPlugin.configs['recommended'].rules,
+      ...tsPlugin.configs.strict.rules,
       'no-duplicate-imports': 'off', // 与类型单独引入冲突，所以关闭该规则
 
       '@typescript-eslint/no-unused-vars': [
