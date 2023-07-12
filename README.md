@@ -29,6 +29,7 @@ export default defineFlatConfig(all)
 
 ```js
 import { alwynou } from '@alwynou/eslint-config'
+
 export default alwynou(
   [
     /* your custom config */

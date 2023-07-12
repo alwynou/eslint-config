@@ -22,6 +22,7 @@ export const typescript = [
     rules: {
       ...tsPlugin.configs['eslint-recommended'].overrides[0].rules,
       ...tsPlugin.configs['recommended'].rules,
+      'no-duplicate-imports': 'off', // 与类型单独引入冲突，所以关闭该规则
 
       '@typescript-eslint/no-unused-vars': [
         'warn',
@@ -38,7 +39,11 @@ export const typescript = [
       '@typescript-eslint/ban-types': 'off',
       '@typescript-eslint/consistent-type-imports': [
         'error',
-        { fixStyle: 'separate-type-imports', disallowTypeAnnotations: false }
+        {
+          prefer: 'type-imports',
+          fixStyle: 'separate-type-imports',
+          disallowTypeAnnotations: false
+        }
       ],
       '@typescript-eslint/explicit-module-boundary-types': 'off',
       '@typescript-eslint/no-explicit-any': 'off',

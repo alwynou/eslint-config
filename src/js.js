@@ -145,8 +145,7 @@ export const jsx = [
 export const imports = [
   {
     plugins: {
-      import: importPlugin,
-      antfu: antfuPlugin
+      import: importPlugin
     },
     settings: {
       'import/resolver': {
@@ -178,10 +177,7 @@ export const imports = [
       'import/newline-after-import': [
         'error',
         { count: 1, considerComments: true }
-      ],
-
-      'antfu/import-dedupe': 'error',
-      'antfu/prefer-inline-type-import': 'error'
+      ]
     }
   },
   {

@@ -30,7 +30,7 @@ export const basic = [
 ]
 
 /** @type { FlatESLintConfigItem[] } */
-export const all = [...vue, ...basic, ...prettier]
+export const all = [...vue, ...basic, ...markdown, ...prettier]
 
 /** @type {(config?: FlatESLintConfigItem | FlatESLintConfigItem[], enables?: Partial<{
  * vue: boolean
