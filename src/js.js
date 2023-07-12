@@ -87,6 +87,8 @@ export const js = [
       'prefer-template': 'error',
       // 'require-await': 'error',
 
+      'dot-notation': 'warn',
+
       'array-callback-return': 'error',
       'block-scoped-var': 'error',
       eqeqeq: ['error', 'smart'],
