@@ -12,7 +12,8 @@ export const typescript = [
     languageOptions: {
       parser: tsParser,
       parserOptions: {
-        sourceType: 'module'
+        sourceType: 'module',
+        project: true
       }
     },
     plugins: {
