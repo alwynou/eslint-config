@@ -20,8 +20,7 @@ export const jsonc: FlatESLintConfigItem[] = [
   }
 ]
 
-/** @type {import('eslint-define-config').FlatESLintConfigItem[]} */
-export const packageOrder = [
+export const packageOrder: FlatESLintConfigItem[] = [
   {
     files: ['**/package.json'],
     rules: {

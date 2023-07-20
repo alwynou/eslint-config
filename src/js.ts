@@ -135,8 +135,7 @@ export const js: FlatESLintConfigItem[] = [
   }
 ]
 
-/** @type {import('eslint-define-config').FlatESLintConfigItem[]} */
-export const jsx = [
+export const jsx: FlatESLintConfigItem[] = [
   {
     files: ['**/*.jsx'],
     languageOptions: {
@@ -149,8 +148,7 @@ export const jsx = [
   }
 ]
 
-/** @type {import('eslint-define-config').FlatESLintConfigItem[]} */
-export const imports = [
+export const imports: FlatESLintConfigItem[] = [
   {
     plugins: {
       import: importPlugin
@@ -206,8 +204,7 @@ export const imports = [
   }
 ]
 
-/** @type {import('eslint-define-config').FlatESLintConfigItem[]} */
-export const unicorn = [
+export const unicorn: FlatESLintConfigItem[] = [
   {
     plugins: {
       unicorn: unicornPlugin
