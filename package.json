@@ -32,8 +32,7 @@
     "lint": "pnpm build && eslint .",
     "lint:fix": "pnpm build && eslint .",
     "release": "bumpp",
-    "publish:npm": "pnpm publish --access public --no-git-checks",
-    "postinstall": "pnpm build"
+    "publish:npm": "pnpm publish --access public --no-git-checks"
   },
   "peerDependencies": {
     "eslint": "^8.0.0"
