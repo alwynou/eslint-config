@@ -1,22 +1,22 @@
 import jsoncPlugin, { configs } from 'eslint-plugin-jsonc'
 import jsoncParser from 'jsonc-eslint-parser'
 import { GLOB_JSON, GLOB_JSON5, GLOB_JSONC } from './shared.js'
+import type { FlatESLintConfigItem, Rules } from 'eslint-define-config'
 
-/** @type {import('eslint-define-config').FlatESLintConfigItem[]} */
-export const jsonc = [
+export const jsonc: FlatESLintConfigItem[] = [
   {
     files: [GLOB_JSON, GLOB_JSON5, GLOB_JSONC],
     plugins: {
       jsonc: jsoncPlugin
     },
     languageOptions: {
-      parser: jsoncParser
+      parser: jsoncParser as any
     },
     rules: {
       ...configs['recommended-with-jsonc'].rules,
       'jsonc/quote-props': 'off',
       'jsonc/quotes': 'off'
-    }
+    } as Rules
   }
 ]
 

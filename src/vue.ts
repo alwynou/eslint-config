@@ -1,9 +1,12 @@
 import { getPackageInfoSync } from 'local-pkg'
 import vueParser from 'vue-eslint-parser'
+
+// @ts-expect-error
 import vuePlugin from 'eslint-plugin-vue'
 import tsPlugin from '@typescript-eslint/eslint-plugin'
 import { typescript } from './typescript.js'
 import { GLOB_VUE } from './shared.js'
+import type { FlatESLintConfigItem, Rules } from 'eslint-define-config'
 
 export { vueParser, vuePlugin }
 
@@ -20,8 +23,7 @@ export function getVueVersion() {
 }
 const isVue3 = getVueVersion() === 3
 
-/** @type {import('eslint-define-config').FlatESLintConfigItem[]} */
-export const reactivityTransform = [
+export const reactivityTransform: FlatESLintConfigItem[] = [
   {
     languageOptions: {
       globals: {
@@ -43,8 +45,7 @@ export const reactivityTransform = [
   }
 ]
 
-/** @type {import('eslint-define-config').Rules} */
-const vueCustomRules = {
+const vueCustomRules: Rules = {
   'vue/max-attributes-per-line': 'off',
   'vue/no-v-html': 'off',
   'vue/multi-word-component-names': 'off',
@@ -87,24 +88,21 @@ const vueCustomRules = {
   'vue/no-empty-pattern': 'error'
 }
 
-/** @type {import('eslint-define-config').Rules} */
-const vue3Rules = {
+const vue3Rules: Rules = {
   ...vuePlugin.configs.base.rules,
   ...vuePlugin.configs['vue3-essential'].rules,
   ...vuePlugin.configs['vue3-strongly-recommended'].rules,
   ...vuePlugin.configs['vue3-recommended'].rules
 }
 
-/** @type {import('eslint-define-config').Rules} */
-const vue2Rules = {
+const vue2Rules: Rules = {
   ...vuePlugin.configs.base.rules,
   ...vuePlugin.configs.essential.rules,
   ...vuePlugin.configs['strongly-recommended'].rules,
   ...vuePlugin.configs.recommended.rules
 }
 
-/** @type {import('eslint-define-config').FlatESLintConfigItem[]} */
-export const vue = [
+export const vue: FlatESLintConfigItem[] = [
   {
     files: [GLOB_VUE],
     plugins: {
@@ -112,7 +110,7 @@ export const vue = [
       '@typescript-eslint': tsPlugin
     },
     languageOptions: {
-      parser: vueParser,
+      parser: vueParser as any,
       parserOptions: {
         parser: '@typescript-eslint/parser',
         sourceType: 'module',

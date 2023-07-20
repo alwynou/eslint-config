@@ -1,14 +1,20 @@
 import globals from 'globals'
+
+// @ts-expect-error
 import jsConfig from '@eslint/js'
+
+// @ts-expect-error
 import importPlugin from 'eslint-plugin-import'
+
+// @ts-expect-error
 import unicornPlugin from 'eslint-plugin-unicorn'
 import antfuPlugin from 'eslint-plugin-antfu'
 import { GLOB_MARKDOWN, GLOB_SRC, GLOB_SRC_EXT } from './shared.js'
+import type { FlatESLintConfigItem } from 'eslint-define-config'
 
 export { importPlugin, unicornPlugin, antfuPlugin }
 
-/** @type {import('eslint-define-config').FlatESLintConfigItem[]} */
-export const js = [
+export const js: FlatESLintConfigItem[] = [
   jsConfig.configs.recommended,
   {
     languageOptions: {

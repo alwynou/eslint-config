@@ -1,5 +1,3 @@
-// @ts-check
-
 import { eslintComments } from './eslint-comments.js'
 import { imports, js, jsx, unicorn } from './js.js'
 import { jsonc, packageOrder } from './jsonc.js'
@@ -9,14 +7,24 @@ import { GLOB_EXCLUDE } from './shared.js'
 import { typescript } from './typescript.js'
 import { vue } from './vue.js'
 import { yml } from './yml.js'
+import type { FlatESLintConfigItem } from 'eslint-define-config'
 
-/**
- * @typedef { import('eslint-define-config').FlatESLintConfigItem } FlatESLintConfigItem
- */
+export {
+  eslintComments as eslintCommentsRules,
+  imports as importsRules,
+  js as jsRules,
+  jsx as jsxRules,
+  unicorn as unicornRules,
+  jsonc as jsoncRules,
+  packageOrder as packageOrderRules,
+  markdown as markdownRules,
+  prettier as prettierRules,
+  vue as vueRules,
+  yml as ymlRules,
+  typescript as tsRules
+}
 
-/** @type {FlatESLintConfigItem[]} */
-export const basic = [
-  // @ts-ignore
+export const basicRules = [
   { ignores: GLOB_EXCLUDE },
   ...js,
   ...jsx,
@@ -27,37 +35,41 @@ export const basic = [
   ...packageOrder,
   ...yml,
   ...eslintComments
-]
+] as FlatESLintConfigItem[]
 
-/** @type { FlatESLintConfigItem[] } */
-export const all = [...vue, ...basic, ...markdown, ...prettier]
+export const allRules = [
+  ...vue,
+  ...basicRules,
+  ...markdown,
+  ...prettier
+] as FlatESLintConfigItem[]
 
-/** @type {(config?: FlatESLintConfigItem | FlatESLintConfigItem[], enables?: Partial<{
- * vue: boolean
- * prettier: boolean
- * markdown: boolean
- * }>) => FlatESLintConfigItem[]} */
 export function alwynou(
-  config = [],
+  config: FlatESLintConfigItem[] = [],
   {
     vue: enableVue = true,
     prettier: enablePrettier = true,
     markdown: enableMarkdown = true
+  }: {
+    vue?: boolean
+    prettier?: boolean
+    markdown?: boolean
   } = {}
 ) {
   const configs = []
-  configs.push(...basic)
-  if (enableVue !== false) {
+  configs.push(...basicRules)
+
+  if (enableVue) {
     configs.push(...vue)
   }
-  if (enableMarkdown !== false) {
+  if (enableMarkdown) {
     configs.push(...markdown)
   }
-  if (enablePrettier !== false) {
+  if (enablePrettier) {
     configs.push(...prettier)
   }
   if (Object.keys(config).length > 0) {
     configs.push(...(Array.isArray(config) ? config : [config]))
   }
-  return configs
+  return configs as FlatESLintConfigItem[]
 }

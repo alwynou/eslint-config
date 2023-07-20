@@ -1,9 +1,10 @@
+// @ts-expect-error
 import markdownPlugin from 'eslint-plugin-markdown'
 import tsPlugin from '@typescript-eslint/eslint-plugin'
 import { GLOB_MARKDOWN, GLOB_SRC, GLOB_VUE } from './shared.js'
+import type { FlatESLintConfigItem } from 'eslint-define-config'
 
-/** @type {import('eslint-define-config').FlatESLintConfigItem[]} */
-export const markdown = [
+export const markdown: FlatESLintConfigItem[] = [
   {
     files: [GLOB_MARKDOWN],
     plugins: {

@@ -2,15 +2,15 @@ import tsParser from '@typescript-eslint/parser'
 import tsPlugin from '@typescript-eslint/eslint-plugin'
 import antfuPlugin from 'eslint-plugin-antfu'
 import { GLOB_TS, GLOB_TSX } from './shared.js'
+import type { FlatESLintConfigItem } from 'eslint-define-config'
 
 export { tsParser, tsPlugin }
 
-/** @type {import('eslint-define-config').FlatESLintConfigItem[]} */
-export const typescript = [
+export const typescript: FlatESLintConfigItem[] = [
   {
     files: [GLOB_TS, GLOB_TSX],
     languageOptions: {
-      parser: tsParser,
+      parser: tsParser as any,
       parserOptions: {
         sourceType: 'module',
         project: true
@@ -21,7 +21,7 @@ export const typescript = [
       antfu: antfuPlugin
     },
     rules: {
-      ...tsPlugin.configs['eslint-recommended'].overrides[0].rules,
+      ...tsPlugin.configs['eslint-recommended'].overrides?.[0].rules,
       'no-unused-vars': 'off',
       'no-duplicate-imports': 'off', // 与类型单独引入冲突，所以关闭该规则
 

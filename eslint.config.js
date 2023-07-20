@@ -1,4 +1,3 @@
-import { defineFlatConfig } from 'eslint-define-config'
-import { all } from './src/index.js'
+import alwynou from './dist/index.mjs'
 
-export default defineFlatConfig(all)
+export default alwynou()

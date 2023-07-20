@@ -1,10 +1,14 @@
+// @ts-expect-error
 import prettierPlugin from 'eslint-plugin-prettier'
+
+// @ts-expect-error
 import prettierConfig from 'eslint-config-prettier'
+import type { FlatESLintConfigItem } from 'eslint-define-config'
 
 const prettierConflictRules = { ...prettierConfig.rules }
 delete prettierConflictRules['vue/html-self-closing']
-/** @type {import('eslint-define-config').FlatESLintConfigItem[]} */
-export const prettier = [
+
+export const prettier: FlatESLintConfigItem[] = [
   {
     plugins: {
       prettier: prettierPlugin
