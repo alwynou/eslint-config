@@ -28,7 +28,6 @@ export const js: FlatESLintConfigItem[] = [
     plugins: {
       antfu: antfuPlugin
     },
-
     rules: {
       quotes: ['warn', 'single'],
       semi: ['warn', 'never'],
