@@ -4,7 +4,7 @@ import vueParser from 'vue-eslint-parser'
 // @ts-expect-error
 import vuePlugin from 'eslint-plugin-vue'
 import tsPlugin from '@typescript-eslint/eslint-plugin'
-import { typescript } from './typescript.js'
+import { ts } from './typescript.js'
 import { GLOB_VUE } from './shared.js'
 import type { FlatESLintConfigItem, Rules } from 'eslint-define-config'
 
@@ -122,7 +122,7 @@ export const vue: FlatESLintConfigItem[] = [
     },
     processor: vuePlugin.processors['.vue'],
     rules: {
-      ...typescript[0].rules
+      ...ts[0].rules
     }
   },
   {

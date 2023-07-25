@@ -4,7 +4,7 @@ import { jsonc, packageOrder } from './jsonc.js'
 import { markdown } from './markdown.js'
 import { prettier } from './prettier.js'
 import { GLOB_EXCLUDE } from './shared.js'
-import { typescript } from './typescript.js'
+import { ts } from './typescript.js'
 import { vue } from './vue.js'
 import { yml } from './yml.js'
 import type { FlatESLintConfigItem } from 'eslint-define-config'
@@ -21,14 +21,14 @@ export {
   prettier as prettierRules,
   vue as vueRules,
   yml as ymlRules,
-  typescript as tsRules
+  ts as tsRules
 }
 
 export const basicRules = [
   { ignores: GLOB_EXCLUDE },
   ...js,
   ...jsx,
-  ...typescript,
+  ...ts,
   ...imports,
   ...unicorn,
   ...jsonc,
